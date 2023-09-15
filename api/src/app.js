@@ -1,11 +1,15 @@
 const express = require('express');
-const cors = require('cors');
-const router = require('./router');
+const bodyParser = require('body-parser');
+const cors = require('cors'); // Importe o middleware cors
+const voluntariosRoutes = require('./routes/voluntariosRoutes');
 
 const app = express();
 
-app.use(express.json());
+// Use o middleware cors para habilitar CORS
 app.use(cors());
-app.use(router);
+
+app.use(bodyParser.json());
+
+app.use('/api/voluntarios', voluntariosRoutes);
 
 module.exports = app;

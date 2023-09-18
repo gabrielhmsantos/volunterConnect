@@ -12,7 +12,7 @@ const validateVoluntario = [
     body('numero').isNumeric().withMessage('O número deve ser um valor numérico'),
     body('bairro').isLength({ min: 2 }).withMessage('O bairro deve conter pelo menos 2 caracteres'),
     body('cidade').isLength({ min: 2 }).withMessage('A cidade deve conter pelo menos 2 caracteres'),
-    body('estado').isLength({ min: 2, max: 2 }).withMessage('O estado deve conter 2 caracteres'),
+    body('estado').isLength({ min: 2 }).withMessage('O estado deve conter pelo menos 2 caracteres'),
     body('email').isEmail().withMessage('O email deve ser um email válido'),
     body('login').isLength({ min: 6 }).withMessage('O login deve conter pelo menos 6 caracteres'),
     body('senha').isLength({ min: 8 }).withMessage('A senha deve conter pelo menos 8 caracteres'),

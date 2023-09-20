@@ -175,17 +175,23 @@
             </tr>
             <p id="mensagem-senha" style="color: red;"></p>
 
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" onkeyup="verificarSenha()">
+            <script>
+                function validarSenha() {
+                    const senha = document.getElementById("senha").value;
+                    const senhaconfirm = document.getElementById("senhaconfirm").value;
+                    const mensagemSenha = document.getElementById("mensagem-senha");
 
-            <br>
-
-            <label for="senhaconfirm">Confirme a senha:</label>
-            <input type="password" id="senhaconfirm" onkeyup="verificarSenha()">
-
-            <br>
-
-            <p id="mensagem"></p>
+                    if (senha === senhaconfirm) {
+                        // Senhas coincidem, mensagem de confirmação verde
+                        mensagemSenha.textContent = "Senhas coincidem";
+                        mensagemSenha.style.color = "green";
+                    } else {
+                        // Senhas não coincidem, mensagem de erro vermelha
+                        mensagemSenha.textContent = "Senhas não coincidem";
+                        mensagemSenha.style.color = "red";
+                    }
+                }
+            </script>
             </tr>
         </table>
     </fieldset>
@@ -198,7 +204,6 @@
     <input type="reset" value="Limpar">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="post.js"></script>
-    <script src="verificacaoSenha.js"></script>
 </body>
 
 </html>

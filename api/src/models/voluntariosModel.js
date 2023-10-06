@@ -52,7 +52,6 @@ async function loginVoluntario(login, senha) {
   }
 }
 
-
 module.exports = {
   getAllVoluntarios,
   createVoluntario,

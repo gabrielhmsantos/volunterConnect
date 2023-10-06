@@ -18,7 +18,4 @@ app.use('/api/ongs', ongsRoutes);
 app.use('/api/projetos', projetosRoutes);
 app.use('/login', loginRoutes);
 
-
-
-
 module.exports = app;

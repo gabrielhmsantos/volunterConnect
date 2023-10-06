@@ -45,7 +45,7 @@ async function login(req, res) {
     const voluntario = await voluntarioModel.loginVoluntario(login, senha);
 
     if (voluntario) {
-      res.status(200).json({ message: 'Login bem-sucedido' });
+      res.status(200).json({ message: 'Login bem-sucedido', tipoLogin: req.body.tipoLogin, id: voluntario.idvoluntarios });
     } else {
       res.status(401).json({ message: 'Login ou senha incorretos' });
     }

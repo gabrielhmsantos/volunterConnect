@@ -46,7 +46,7 @@ async function login(req, res) {
   
     if (ong) {
       // Login bem-sucedido
-      res.status(200).json({ message: 'Login bem-sucedido' });
+      res.status(200).json({ message: 'Login bem-sucedido', tipoLogin: req.body.tipoLogin, id: ong.idongs });
     } else {
       // Login falhou
       res.status(401).json({ message: 'Login ou senha incorretos' });

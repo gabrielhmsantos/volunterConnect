@@ -38,9 +38,25 @@ async function deleteVoluntario(req, res, next) {
   }
 }
 
+async function login(req, res) {
+  const { login, senha } = req.body;
+
+  // Chame a função de login apropriada do modelo
+  const voluntario = await voluntarioModel.loginVoluntario(login, senha);
+
+  if (voluntario) {
+    // Login bem-sucedido
+    res.status(200).json({ message: 'Login bem-sucedido' });
+  } else {
+    // Login falhou
+    res.status(401).json({ message: 'Login ou senha incorretos' });
+  }
+}
+
 module.exports = {
   getAllVoluntarios,
   createVoluntario,
   updateVoluntario,
   deleteVoluntario,
+  login,
 };

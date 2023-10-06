@@ -42,9 +42,20 @@ async function deleteVoluntario(volunteerId) {
   }
 }
 
+async function loginVoluntario(login, senha) {
+  const conn = await db.getConnection();
+  try {
+    const [rows] = await conn.query('SELECT * FROM voluntarios WHERE login = ? AND senha = ?', [login, senha]);
+    return rows[0] || null;
+  } finally {
+    conn.release();
+  }
+}
+
 module.exports = {
   getAllVoluntarios,
   createVoluntario,
   updateVoluntario,
   deleteVoluntario,
+  loginVoluntario,
 };

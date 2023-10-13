@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Volunteer Connect</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="perfil.html">Perfil</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="projetos.html">Projetos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="configuracoes.html">Configurações</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="display-4 text-center">Selecione Projetos</h1>
+        <ul id="projectsList" class="list-group">
+
+        </ul>
+    </div>
+
+    <div class="container mt-3 text-center">
+        <button class="btn btn-primary" id="enviarButton">Enviar</button>
+        <button class="btn btn-secondary" id="limparButton">Limpar</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // PROJETOS EXEMPLOS TRAZER DO BD DEPOIS
+            const projects = [
+                { id: 1, name: 'Cidadania Jovem' },
+                { id: 2, name: 'AMAI' },
+                { id: 3, name: 'Cultive Sonhos' },
+                { id: 4, name: 'Canoa para Todos' },
+                { id: 5, name: 'SOS Mata Atlântica' },
+                { id: 6, name: 'Amigos do Bem' },
+                { id: 7, name: 'Arca' },
+                { id: 8, name: 'UNICEF' },
+                { id: 9, name: 'Médicos Sem Fronteiras' },
+                { id: 10, name: 'Cruz Vermelha' },
+                { id: 11, name: 'Cão sem Dono' },
+                { id: 12, name: 'Coração' },
+            ];
+
+            const projectsList = document.getElementById('projectsList');
+
+            // Preencha a lista de projetos
+            projects.forEach((project) => {
+                const li = document.createElement('li');
+                li.classList.add('list-group-item');
+
+                const projectName = document.createElement('span');
+                projectName.textContent = project.name;
+
+                // Crie um ícone de marcação (círculo vazio)
+                const icon = document.createElement('i');
+                icon.classList.add('far', 'fa-circle', 'mr-2');
+                icon.style.cursor = 'pointer';
+
+                // Adicione um evento de clique para o ícone de marcação
+                icon.addEventListener('click', function () {
+                    // Alternar entre um círculo vazio e um círculo preenchido
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas'); // Use 'fas' para um círculo preenchido
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                    }
+                });
+
+                li.appendChild(icon);
+                li.appendChild(projectName);
+
+                projectsList.appendChild(li);
+            });
+
+            //  botão "Enviar"
+            const enviarButton = document.getElementById('enviarButton');
+            enviarButton.addEventListener('click', function () {
+                // Coloque sua lógica de envio aqui
+                alert('Enviando projetos selecionados...');
+            });
+
+            // botão "Limpar"
+            const limparButton = document.getElementById('limparButton');
+            limparButton.addEventListener('click', function () {
+
+                const icons = document.querySelectorAll('.fas');
+                icons.forEach(icon => {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

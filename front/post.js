@@ -49,9 +49,13 @@ function enviarDados() {
             // window.location.href = "pagina-de-sucesso.html";
         })
         .catch(function (error) {
-            // Exibir uma mensagem de erro
-            alert("Ocorreu um erro ao enviar os dados. Por favor, tente novamente mais tarde.");
-            console.error("Erro ao enviar dados:", error);
+            if(error.response.data.errors[0].msg){
+                alert(error.response.data.errors[0].msg);
+
+            }else{
+                alert("Ocorreu um erro ao enviar os dados. Por favor, tente novamente mais tarde.");
+                console.error("Erro ao enviar dados:", error);
+            }
         });
 }
 

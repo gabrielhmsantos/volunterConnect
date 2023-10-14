@@ -45,3 +45,17 @@ body {
     border: 5px solid #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+/* Classe CSS para  de mensagem de senha */
+#mensagem-senha {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.verde {
+    color: green;
+}
+
+.vermelho {
+    color: red;
+}

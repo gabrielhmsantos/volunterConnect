@@ -2,38 +2,99 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Página Inicial</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Voluntarios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-    <div class="menu">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="tela_ong.html">Cadastro de ONG</a></li>
-            <li><a href="tela_voluntarios.html">Cadastro de Voluntario</a></li>
-            <li><a href="tela_projeto.html">Cadastro Projetos</a></li>
-            <li><a href="parceiros.html">Parceiros</a></li>
-            <li class="login-btn"><a href="#">Login</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Volunteer Connect</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Início <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tela_ong.html">Cadastro de ONG</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tela_voluntarios.html">Cadastro de Voluntário</a>
+                </li>
+                <!--   <li class="nav-item">
+                    <a class="nav-link" href="tela_projeto.html">Cadastro de Projetos</a>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" href="parceiros.html">Parceiros</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login2.html" class="btn btn-primary">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--<div id="carouselExample" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="imagem1.jpg" alt="Ação Social 1">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="imagem2.jpg" alt="Ação Social 2">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="imagem3.jpg" alt="Ação Social 3">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="imagem4.jpg" alt="Ação Social 4">
+            </div>
+        </div>-->
     </div>
 
-    <div class="content">
-        <h1>Bem-vindo à nossa plataforma de Voluntariado!</h1>
-        <h2>Conecte-se com pessoas e faça a diferença!</h2><br />
+    <div class="container mt-5">
+        <!-- Resto do conteúdo -->
+    </div>
 
-        <img class="social-image"
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $('.carousel').carousel({
+            interval: 3000 // Muda de imagem a cada 3 segundos
+        });
+    </script>
+</body>
+
+</html>
+
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4">Bem-vindo à nossa plataforma de Voluntariado!</h1>
+        <h2 class="mb-4">Conecte-se com pessoas e faça a diferença!</h2>
+        <img class="img-fluid rounded-circle mb-4"
             src="https://th.bing.com/th/id/R.f3ff529912b7fa77cfd3910eee000f05?rik=zmhSCkxLWX5WSQ&pid=ImgRaw&r=0"
-            alt="Ação Social" style="width: 500px; height: auto;">
+            alt="Ação Social">
+    </div>
 
+    <div class="text-justify">
         <h2>Sobre a Plataforma</h2>
-        <p>Nossa plataforma foi criada com o objetivo de conectar pessoas interessadas em realizar trabalhos voluntários
+        <p>Nossa plataforma foi criada com o objetivo de conectar pessoas interessadas em realizar trabalhos
+            voluntários
             sem fins lucrativos a ONGs e projetos de seu interesse.</p>
 
         <h3>Como Funciona</h3>
-        <p>Nossa plataforma facilita a busca por trabalhos voluntários de acordo com suas preferências e habilidades. Ao
-            se cadastrar, você pode pesquisar por ONGs e projetos que estejam alinhados com suas causas favoritas.</p>
+        <p>Nossa plataforma facilita a busca por trabalhos voluntários de acordo com suas preferências e
+            habilidades. Ao
+            se cadastrar, você pode pesquisar por ONGs e projetos que estejam alinhados com suas causas favoritas.
+        </p>
 
         <h3>Benefícios</h3>
         <ul>
@@ -45,10 +106,18 @@
 
         <h3>Junte-se a nós!</h3>
         <p>Se você está pronto para começar sua jornada como voluntário e ajudar a tornar o mundo um lugar melhor,
-            junte-se a nós hoje mesmo! Cadastre-se em nossa plataforma e encontre a oportunidade perfeita para você!</p>
+            junte-se a nós hoje mesmo! Cadastre-se em nossa plataforma e encontre a oportunidade perfeita para você!
+        </p>
 
-        <p>Entre em contato conosco em voluntariado@volunterconnect.com.br.com para mais informações.</p>
+        <p>Entre em contato conosco em <a
+                href="mailto:voluntariado@volunterconnect.com.br">voluntariado@volunterconnect.com.br</a> para mais
+            informações.</p>
     </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

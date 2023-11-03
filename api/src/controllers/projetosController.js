@@ -6,7 +6,7 @@ async function getAllProjetos(req, res, next) {
     const projetos = await projetoModel.getAllProjetos();
     res.json(projetos);
   } catch (error) {
-    next(error);
+    res.status(500).json({ message: 'Erro interno do servidor', error: error.message });
   }
 }
 
@@ -16,7 +16,7 @@ async function createProjeto(req, res, next) {
     const projetoId = await projetoModel.createProjeto(req.body);
     res.status(201).json({ id: projetoId });
   } catch (error) {
-    next(error);
+    res.status(500).json({ message: 'Erro interno do servidor', error: error.message });
   }
 }
 
@@ -27,7 +27,7 @@ async function updateProjeto(req, res, next) {
     await projetoModel.updateProjeto(projetoId, req.body);
     res.sendStatus(204);
   } catch (error) {
-    next(error);
+    res.status(500).json({ message: 'Erro interno do servidor', error: error.message });
   }
 }
 
@@ -38,7 +38,7 @@ async function deleteProjeto(req, res, next) {
     await projetoModel.deleteProjeto(projetoId);
     res.sendStatus(204);
   } catch (error) {
-    next(error);
+    res.status(500).json({ message: 'Erro interno do servidor', error: error.message });
   }
 }
 

@@ -43,23 +43,27 @@
         <h1 class="text-center">Seja bem-vindo à Volunteer Connect</h1>
         <h2 class="text-center">Preencha o formulário com a ONG!</h2><br />
 
-        <form action="Script_do_Formulario.php" method="post">
+        <form>
             <!-- DADOS PESSOAIS -->
             <fieldset>
                 <legend>Dados ONG</legend>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="razaoSocial">Razão Social:</label>
-                        <input type="text" class="form-control" id="razaoSocial" name="razaoSocial">
+                        <label for="razao_social">Razão Social:</label>
+                        <input type="text" class="form-control" id="razao_social" name="razao_social">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="nomeFantasia">Nome Fantasia:</label>
-                        <input type="text" class="form-control" id="nomeFantasia" name="nomeFantasia">
+                        <label for="nome_fantasia">Nome Fantasia:</label>
+                        <input type="text" class="form-control" id="nome_fantasia" name="nome_fantasia">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="cnpj">CNPJ:</label>
                     <input type="text" class="form-control" id="cnpj" name="cnpj" maxlength="14">
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" class="form-control" id="telefone" name="telefone">
                 </div>
             </fieldset>
             <br />
@@ -75,7 +79,7 @@
                         <label for="numero">Número:</label>
                         <input type="text" class="form-control" id="numero" name="numero">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class "form-group col-md-4">
                         <label for="bairro">Bairro:</label>
                         <input type="text" class="form-control" id="bairro" name="bairro">
                     </div>
@@ -120,11 +124,7 @@
                     <div class="form-group col-md-4">
                         <label for="cep">CEP:</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="cep" name="cep" maxlength="5">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">-</span>
-                            </div>
-                            <input type="text" class="form-control" id="cep2" name="cep2" maxlength="3">
+                            <input type="text" class="form-control" id="cep" name="cep" maxlength="8">
                         </div>
                     </div>
                 </div>
@@ -136,40 +136,39 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="email">E-mail:</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" id="email" name="email">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="login">Login de usuário:</label>
-                        <input type="text" class="form-control" id="login">
+                        <input type="text" class="form-control" id="login" name="login">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="senha">Senha:</label>
-                        <input type="password" class="form-control" id="senha" onkeyup="verificarSenha()">
+                        <label for "senha">Senha:</label>
+                        <input type="password" class="form-control" id="senha" name="senha" onkeyup="verificarSenha()">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="senhaconfirm">Confirme a senha:</label>
-                        <input type="password" class="form-control" id="senhaconfirm" onkeyup="verificarSenha()">
+                        <input type="password" class="form-control" id="senhaconfirm" name="senhaconfirm"
+                            onkeyup="verificarSenha()">
                     </div>
                 </div>
                 <div class="form-group">
                     <p id="mensagem" style="color: red;"></p>
                 </div>
             </fieldset>
-
             <br />
-
             <!-- Botão para enviar os dados -->
-            <button type="submit" class="btn btn-primary">Enviar Dados</button>
-            <!-- Botão para limpar o formulário -->
-            <button type="reset" class="btn btn-secondary">Limpar</button>
+            <button type="button" class="btn btn-primary" onclick="enviarDados()">Enviar Dados</button>
         </form>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="validarSenha.js"></script>
+    <script src="postong.js"></script>
 </body>
 
 </html>

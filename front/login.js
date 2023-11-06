@@ -27,7 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.status == 200) {
                 alert("Você está logado.");
-                window.location.href = "boas_vindas.html";
+                if(usertype == "ong"){
+                    window.location.href = "tela_projeto.html";
+                }else{
+                    window.location.href = "boas_vindas.html";
+                }
             } else {
                 alert("Falha no login. Verifique suas credenciais.");
             }

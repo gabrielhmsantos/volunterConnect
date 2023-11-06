@@ -2,10 +2,10 @@ const { body, validationResult } = require('express-validator');
 
 const validateOng = [
     body('razao_social').isLength({ min: 2 }).withMessage('A razão social deve conter pelo menos 2 caracteres'),
-    body('Nome_fantasia').isLength({ min: 2 }).withMessage('O nome fantasia deve conter pelo menos 2 caracteres'),
+    body('nome_fantasia').isLength({ min: 2 }).withMessage('O nome fantasia deve conter pelo menos 2 caracteres'),
     body('cnpj').isLength({ min: 14, max: 14 }).withMessage('O CNPJ deve conter exatamente 14 caracteres'),
     body('telefone').isLength({ min: 11, max: 11 }).withMessage('O telefone deve conter exatamente 11 dígitos'),
-    body('Rua').isLength({ min: 2 }).withMessage('A rua deve conter pelo menos 2 caracteres'),
+    body('rua').isLength({ min: 2 }).withMessage('A rua deve conter pelo menos 2 caracteres'),
     body('numero').isLength({ min: 1 }).withMessage('O número deve ser preenchido'),
     body('bairro').isLength({ min: 2 }).withMessage('O bairro deve conter pelo menos 2 caracteres'),
     body('cidade').isLength({ min: 2 }).withMessage('A cidade deve conter pelo menos 2 caracteres'),
